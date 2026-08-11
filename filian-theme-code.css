@@ -1206,4 +1206,29 @@
     background-color: var(--secondary3-colour) !important;
 }
 
+/* Fix missing/invisible servers in horizontal list */
+#app-mount [class*="guilds_"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
 
+#app-mount [class*="guilds_"] [class*="scroller_"],
+#app-mount [class*="guilds_"] [role="tree"] {
+    display: flex !important;
+    flex-direction: row !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+}
+
+#app-mount [class*="guilds_"] [class*="listItem_"] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 48px !important;
+    height: 48px !important;
+}
