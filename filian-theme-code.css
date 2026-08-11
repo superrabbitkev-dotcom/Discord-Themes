@@ -1195,3 +1195,95 @@
         background-color: var(--secondary3-colour);
         border-bottom: 3px solid var(--primary3-colour);
     }
+/* --- src/main.css --- */
+:root {
+    :root {
+  --HSL-server-direction: column !important;
+  --HSL-server-alignment: center !important;
+}
+  --notices-height: 36px;
+  --serverlist-offset: var(--custom-guild-list-width);
+}
+
+.base__5e434[data-fullscreen="false"] .content__5e434 {
+  margin-top: var(--serverlist-offset);
+  overflow: visible !important;
+}
+
+:fullscreen .content__5e434 {
+  margin: 0 !important;
+}
+
+.sidebar__5e434 {
+  border-radius: 0;
+  overflow: visible !important;
+}
+
+.guilds__5e434 {
+  transform-origin: 0 0;
+  bottom: unset;
+  left: 0;
+  rotate: -90deg;
+  height: 100vw !important;
+  position: absolute !important;
+
+& .itemsContainer_ef3116, & .stack_dbd263 {
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+}
+
+.tree_ef3116 {
+  padding-top: var(--HSL-top-padding, var(--size-sm));
+  justify-content: var(--HSL-server-alignment);
+}
+
+.wrapper__6e9f8, .folderPreview__48112, .folderIconWrapper__48112, .lowerBadge_cc5dd2, .upperBadge_cc5dd2 {
+  rotate: 90deg;
+}
+
+.childWrapper__6e9f8 {
+  rotate: 0deg;
+}
+
+.notice__6e2b9 {
+  height: var(--notices-height);
+
+  & + .content__5e434 {
+    --serverlist-offset: calc(var(--notices-height) + var(--custom-guild-list-width));
+  }
+}
+
+.container__5e434 > div[style]:not(.base__5e434) {
+  top: calc(var(--serverlist-offset) + var(--custom-app-top-bar-height));
+  pointer-events: none;
+  z-index: 1;
+  position: absolute;
+  width: 100vw !important;
+  height: var(--serverlist-offset) !important;
+
+  & .guilds__5e434 {
+    pointer-events: all;
+  }
+
+  & + .base__5e434 .content__5e434 {
+    margin-top: calc(var(--serverlist-offset) * 2);
+  }
+}
+/* --- HSL fixes: anchor servers to the LEFT, no clipping --- */
+:root {
+  --HSL-server-direction: column !important;
+  --HSL-server-alignment: flex-start !important;
+}
+
+.guilds__5e434 .itemsContainer_ef3116,
+.guilds__5e434 .stack_dbd263 {
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+/* row scrolls horizontally instead of clipping when you have many servers */
+.guilds__5e434 [class*="scroller"] {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
