@@ -1195,15 +1195,6 @@
         background-color: var(--secondary3-colour);
         border-bottom: 3px solid var(--primary3-colour);
     }
-#app-mount .wrapper_ef3116.guilds__5e434 {
-    width: 100vw !important;
-    height: 52px !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    z-index: 100;
-    flex-direction: row !important;
-    background-color: var(--secondary3-colour) !important;
-}
+
 
 
