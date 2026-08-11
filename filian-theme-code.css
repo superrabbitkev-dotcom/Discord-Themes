@@ -1195,3 +1195,44 @@
         background-color: var(--secondary3-colour);
         border-bottom: 3px solid var(--primary3-colour);
     }
+#app-mount .wrapper_ef3116.guilds__5e434 {
+    width: 100vw !important;
+    height: 52px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 100;
+    flex-direction: row !important;
+    background-color: var(--secondary3-colour) !important;
+}
+
+/* 2. Lay out server icons horizontally */
+#app-mount .wrapper_ef3116.guilds__5e434 [role="tree"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 0 10px !important;
+}
+
+/* Fix server item margins for horizontal layout */
+#app-mount .wrapper_ef3116.guilds__5e434 .listItem__5e434 {
+    margin: 0 4px !important;
+    width: auto !important;
+}
+
+/* Hide or adjust vertical pill indicators */
+#app-mount .wrapper_ef3116.guilds__5e434 .pill__5e434 {
+    display: none !important;
+}
+
+/* 3. Shift the rest of the Discord App down below the top bar */
+#app-mount .base__5e434 {
+    top: 52px !important;
+    height: calc(100vh - 52px) !important;
+    position: absolute !important;
+    width: 100vw !important;
+}
