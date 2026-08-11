@@ -1232,11 +1232,7 @@
     width: 48px !important;
     height: 48px !important;
 }
-/* =========================================================
-   TOP HORIZONTAL SERVER BAR FIX
-   ========================================================= */
-
-/* 1. Turn the entire server sidebar area into a top header bar */
+/* 1. Remove the dark shade background at the top */
 #app-mount [class*="guilds_"] {
     width: 100vw !important;
     height: 58px !important;
@@ -1244,11 +1240,12 @@
     top: 0 !important;
     left: 0 !important;
     z-index: 1000 !important;
-    background-color: var(--secondary3-colour) !important;
+    background: transparent !important;
+    background-color: transparent !important;
     overflow: hidden !important;
 }
 
-/* 2. Force the scroller and list containers into a single horizontal row */
+/* 2. Horizontal row layout for the server scroller */
 #app-mount [class*="guilds_"] [class*="scroller_"],
 #app-mount [class*="guilds_"] [role="tree"],
 #app-mount [class*="guilds_"] ul[data-list-id="guildsnav"] {
@@ -1264,9 +1261,10 @@
     overflow-x: auto !important;
     overflow-y: hidden !important;
     box-sizing: border-box !important;
+    background: transparent !important;
 }
 
-/* 3. Force all individual server icons and wrappers to align inline horizontally */
+/* 3. Inline horizontal server icons */
 #app-mount [class*="guilds_"] [class*="listItem_"],
 #app-mount [class*="guilds_"] [role="tree"] > div,
 #app-mount [class*="guilds_"] [role="tree"] > li,
@@ -1283,21 +1281,21 @@
     position: relative !important;
 }
 
-/* 4. Fix folder containers so folder icons line up horizontally too */
+/* 4. Folder alignment */
 #app-mount [class*="guilds_"] [class*="folder_"],
 #app-mount [class*="guilds_"] [class*="expandedFolderBackground_"] {
     display: inline-flex !important;
     flex-direction: row !important;
 }
 
-/* 5. Hide unread pills and vertical bar dividers that disrupt horizontal alignment */
+/* 5. Hide unread vertical indicators & separators */
 #app-mount [class*="guilds_"] [class*="pill_"],
 #app-mount [class*="guilds_"] [class*="unread_"],
 #app-mount [class*="guilds_"] [class*="guildSeparator_"] {
     display: none !important;
 }
 
-/* 6. Push the main Discord UI down below the 58px top server bar */
+/* 6. Push the rest of the Discord interface down */
 #app-mount [class*="base_"] {
     top: 58px !important;
     height: calc(100vh - 58px) !important;
